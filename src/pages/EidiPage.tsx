@@ -107,7 +107,7 @@ const EidiPage = () => {
           )}
 
           <div className="space-y-3">
-            <p className="text-sm text-gold/80">শেয়ার করুন 👇</p>
+            <p className="text-sm" style={{ color: "hsl(45, 90%, 80%)" }}>শেয়ার করুন 👇</p>
             <div className="flex justify-center gap-3 flex-wrap">
               <Button variant="gold" size="sm" onClick={() => share("facebook")} className="rounded-full text-primary-foreground">📘 Facebook</Button>
               <Button variant="gold" size="sm" onClick={() => share("whatsapp")} className="rounded-full text-primary-foreground">💬 WhatsApp</Button>
