@@ -102,7 +102,7 @@ const EidiPage = () => {
               <p className="text-xl font-bold" style={{ color: "hsl(45, 100%, 96%)" }}>
                 {profile.paymentNumber}
               </p>
-              <p className="text-xs text-gold/60 mt-1">বিকাশ / নগদ</p>
+              <p className="text-xs mt-1" style={{ color: "hsl(45, 80%, 75%)" }}>বিকাশ / নগদ</p>
             </div>
           )}
 
