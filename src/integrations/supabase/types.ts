@@ -14,7 +14,78 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      eidi_profiles: {
+        Row: {
+          created_at: string
+          id: string
+          message: string | null
+          name: string
+          payment_number: string | null
+          photo: string | null
+          visits: number
+        }
+        Insert: {
+          created_at?: string
+          id: string
+          message?: string | null
+          name: string
+          payment_number?: string | null
+          photo?: string | null
+          visits?: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string | null
+          name?: string
+          payment_number?: string | null
+          photo?: string | null
+          visits?: number
+        }
+        Relationships: []
+      }
+      secret_messages: {
+        Row: {
+          created_at: string
+          id: string
+          message: string
+          sender_name: string
+        }
+        Insert: {
+          created_at?: string
+          id: string
+          message: string
+          sender_name?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string
+          sender_name?: string
+        }
+        Relationships: []
+      }
+      voice_wishes: {
+        Row: {
+          audio_url: string
+          created_at: string
+          id: string
+          sender_name: string
+        }
+        Insert: {
+          audio_url: string
+          created_at?: string
+          id: string
+          sender_name?: string
+        }
+        Update: {
+          audio_url?: string
+          created_at?: string
+          id?: string
+          sender_name?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
