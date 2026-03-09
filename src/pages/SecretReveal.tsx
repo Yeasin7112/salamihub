@@ -87,7 +87,7 @@ const SecretReveal = () => {
             <div className="bg-card/10 backdrop-blur-md rounded-2xl p-8 mb-6 border border-secondary/30">
               <p className="text-xl" style={{ color: "hsl(45, 100%, 90%)" }}>{message.message}</p>
               {message.sender_name !== "অজানা" && (
-                <p className="text-gold/70 mt-4 text-sm">— {message.sender_name}</p>
+                <p style={{ color: "hsl(45, 80%, 75%)" }} className="mt-4 text-sm">— {message.sender_name}</p>
               )}
             </div>
 
