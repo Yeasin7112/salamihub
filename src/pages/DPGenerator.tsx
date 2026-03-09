@@ -95,9 +95,9 @@ const DPGenerator = () => {
       ctx.fillText("ঈদ মোবারক!", size / 2, 650);
 
       // Subtitle
-      ctx.font = "24px 'Hind Siliguri', sans-serif";
+      ctx.font = "20px 'Hind Siliguri', sans-serif";
       ctx.fillStyle = "hsl(45, 100%, 90%)";
-      ctx.fillText("EidiLink 🌙", size / 2, 700);
+      ctx.fillText("eidihub.vercel.app", size / 2, 700);
 
       // Bottom decorative dots
       ctx.fillStyle = "hsl(43, 85%, 55%)";
