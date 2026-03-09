@@ -1,3 +1,5 @@
+import { supabase } from "@/integrations/supabase/client";
+
 export interface EidiProfile {
   id: string;
   name: string;
@@ -8,46 +10,72 @@ export interface EidiProfile {
   createdAt: number;
 }
 
-const STORE_KEY = "eidilink_profiles";
+function generateId(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]/g, "") + Math.random().toString(36).slice(2, 6);
+}
 
-function getAll(): EidiProfile[] {
-  try {
-    return JSON.parse(localStorage.getItem(STORE_KEY) || "[]");
-  } catch {
-    return [];
+export async function createProfile(data: Omit<EidiProfile, "id" | "visits" | "createdAt">): Promise<EidiProfile> {
+  const id = generateId(data.name);
+  const { error } = await supabase.from("eidi_profiles").insert({
+    id,
+    name: data.name,
+    photo: data.photo,
+    message: data.message,
+    payment_number: data.paymentNumber,
+  });
+  if (error) throw error;
+  return { ...data, id, visits: 0, createdAt: Date.now() };
+}
+
+export async function getProfile(id: string): Promise<EidiProfile | undefined> {
+  const { data } = await supabase.from("eidi_profiles").select("*").eq("id", id).single();
+  if (!data) return undefined;
+  return {
+    id: data.id,
+    name: data.name,
+    photo: data.photo || "",
+    message: data.message || "",
+    paymentNumber: data.payment_number || "",
+    visits: data.visits,
+    createdAt: new Date(data.created_at).getTime(),
+  };
+}
+
+export async function incrementVisit(id: string) {
+  const { data } = await supabase.from("eidi_profiles").select("visits").eq("id", id).single();
+  if (data) {
+    await supabase.from("eidi_profiles").update({ visits: data.visits + 1 }).eq("id", id);
   }
 }
 
-function save(profiles: EidiProfile[]) {
-  localStorage.setItem(STORE_KEY, JSON.stringify(profiles));
+export async function getLeaderboard(): Promise<EidiProfile[]> {
+  const { data } = await supabase
+    .from("eidi_profiles")
+    .select("*")
+    .order("visits", { ascending: false })
+    .limit(20);
+  if (!data) return [];
+  return data.map((d) => ({
+    id: d.id,
+    name: d.name,
+    photo: d.photo || "",
+    message: d.message || "",
+    paymentNumber: d.payment_number || "",
+    visits: d.visits,
+    createdAt: new Date(d.created_at).getTime(),
+  }));
 }
 
-export function createProfile(data: Omit<EidiProfile, "id" | "visits" | "createdAt">): EidiProfile {
-  const profiles = getAll();
-  const id = data.name.toLowerCase().replace(/[^a-z0-9]/g, "") + Math.random().toString(36).slice(2, 6);
-  const profile: EidiProfile = { ...data, id, visits: 0, createdAt: Date.now() };
-  profiles.push(profile);
-  save(profiles);
-  return profile;
-}
-
-export function getProfile(id: string): EidiProfile | undefined {
-  return getAll().find((p) => p.id === id);
-}
-
-export function incrementVisit(id: string) {
-  const profiles = getAll();
-  const p = profiles.find((p) => p.id === id);
-  if (p) {
-    p.visits++;
-    save(profiles);
-  }
-}
-
-export function getLeaderboard(): EidiProfile[] {
-  return getAll().sort((a, b) => b.visits - a.visits).slice(0, 20);
-}
-
-export function getAllProfiles(): EidiProfile[] {
-  return getAll();
+export async function getAllProfiles(): Promise<EidiProfile[]> {
+  const { data } = await supabase.from("eidi_profiles").select("*");
+  if (!data) return [];
+  return data.map((d) => ({
+    id: d.id,
+    name: d.name,
+    photo: d.photo || "",
+    message: d.message || "",
+    paymentNumber: d.payment_number || "",
+    visits: d.visits,
+    createdAt: new Date(d.created_at).getTime(),
+  }));
 }

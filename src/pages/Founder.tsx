@@ -17,17 +17,31 @@ const Founder = () => {
           <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center mx-auto mb-4 text-4xl text-primary-foreground border-4 border-secondary shadow-gold">
             🌙
           </div>
-          <h2 className="text-2xl font-bold text-foreground mb-1">EidiLink ফাউন্ডার</h2>
-          <p className="text-muted-foreground text-sm mb-6">ঈদের আনন্দ সবার মাঝে ছড়িয়ে দিতে চাই</p>
+          <h2 className="text-2xl font-bold text-foreground mb-1">Yeasin Arafat</h2>
+          <p className="text-muted-foreground text-sm mb-4">ঈদের আনন্দ সবার মাঝে ছড়িয়ে দিতে চাই</p>
+
+          <a
+            href="https://www.facebook.com/helloYeasin007"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-primary hover:underline mb-6"
+          >
+            📘 Facebook Profile
+          </a>
 
           <div className="bg-muted rounded-xl p-4 mb-4">
             <p className="text-sm text-muted-foreground mb-1">💳 বিকাশ নম্বর</p>
-            <p className="text-xl font-bold text-primary">01XXXXXXXXX</p>
+            <p className="text-xl font-bold text-primary">01881150768</p>
+          </div>
+
+          <div className="bg-muted rounded-xl p-4 mb-4">
+            <p className="text-sm text-muted-foreground mb-1">💰 নগদ নম্বর</p>
+            <p className="text-xl font-bold text-primary">01734916497</p>
           </div>
 
           <div className="bg-muted rounded-xl p-4 mb-6">
-            <p className="text-sm text-muted-foreground mb-1">💰 নগদ নম্বর</p>
-            <p className="text-xl font-bold text-primary">01XXXXXXXXX</p>
+            <p className="text-sm text-muted-foreground mb-1">🚀 রকেট নম্বর</p>
+            <p className="text-xl font-bold text-primary">017349164977</p>
           </div>
 
           <p className="text-muted-foreground text-sm">

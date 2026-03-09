@@ -12,6 +12,7 @@ const CreateEidi = () => {
   const [message, setMessage] = useState("ঈদ মোবারক! আপনার জন্য শুভকামনা 🌙");
   const [paymentNumber, setPaymentNumber] = useState("");
   const [photo, setPhoto] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -22,14 +23,21 @@ const CreateEidi = () => {
     }
   };
 
-  const handleCreate = () => {
+  const handleCreate = async () => {
     if (!name.trim()) {
       toast.error("আপনার নাম দিন!");
       return;
     }
-    const profile = createProfile({ name: name.trim(), photo, message, paymentNumber });
-    toast.success("ঈদি লিংক তৈরি হয়েছে! 🎉");
-    navigate(`/eidi/${profile.id}`);
+    setLoading(true);
+    try {
+      const profile = await createProfile({ name: name.trim(), photo, message, paymentNumber });
+      toast.success("ঈদি লিংক তৈরি হয়েছে! 🎉");
+      navigate(`/eidi/${profile.id}`);
+    } catch {
+      toast.error("কিছু সমস্যা হয়েছে, আবার চেষ্টা করুন!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -69,8 +77,8 @@ const CreateEidi = () => {
             <Input value={paymentNumber} onChange={(e) => setPaymentNumber(e.target.value)} placeholder="01XXXXXXXXX" className="rounded-xl" />
           </div>
 
-          <Button variant="festive" size="lg" className="w-full rounded-full text-lg" onClick={handleCreate}>
-            🎉 ঈদি লিংক তৈরি করুন
+          <Button variant="festive" size="lg" className="w-full rounded-full text-lg" onClick={handleCreate} disabled={loading}>
+            {loading ? "তৈরি হচ্ছে... ⏳" : "🎉 ঈদি লিংক তৈরি করুন"}
           </Button>
         </div>
       </div>
