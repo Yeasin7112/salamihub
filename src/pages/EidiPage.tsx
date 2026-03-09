@@ -116,7 +116,7 @@ const EidiPage = () => {
             </div>
           </div>
 
-          <p className="text-xs text-gold/40 mt-8">👁️ {profile.visits + 1} বার দেখা হয়েছে</p>
+          <p className="text-xs mt-8" style={{ color: "hsl(45, 80%, 70%)" }}>👁️ {profile.visits + 1} বার দেখা হয়েছে</p>
         </div>
       </div>
     </div>
