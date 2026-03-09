@@ -7,7 +7,9 @@ const segments = [
   { label: "৫০ টাকা 💰", color: "hsl(43, 85%, 55%)" },
   { label: "আজ নাই 😆", color: "hsl(0, 70%, 55%)" },
   { label: "১০০ টাকা 🤑", color: "hsl(152, 50%, 45%)" },
+  { label: "৫০০ টাকা 🤩", color: "hsl(280, 60%, 45%)" },
   { label: "ডাবল ঈদি! 🎉", color: "hsl(43, 90%, 45%)" },
+  { label: "১০০০ টাকা 🏆", color: "hsl(340, 65%, 50%)" },
   { label: "আবার চেষ্টা 🔄", color: "hsl(230, 35%, 30%)" },
 ];
 
@@ -20,10 +22,17 @@ const SpinWheel = () => {
     if (spinning) return;
     setSpinning(true);
     setResult(null);
-    const segIndex = Math.floor(Math.random() * segments.length);
-    const segAngle = 360 / segments.length;
-    const extra = 360 * 5 + (360 - segIndex * segAngle - segAngle / 2);
-    const newRotation = rotation + extra;
+
+    const segCount = segments.length;
+    const segAngle = 360 / segCount;
+    const segIndex = Math.floor(Math.random() * segCount);
+
+    // Calculate exact stop angle: segment center should align with top pointer
+    const targetAngle = segIndex * segAngle + segAngle / 2;
+    const stopAngle = (360 - targetAngle + 360) % 360;
+    // Ensure we always spin forward by at least 5 full rotations
+    const fullSpins = 360 * 5;
+    const newRotation = Math.ceil(rotation / 360) * 360 + fullSpins + stopAngle;
     setRotation(newRotation);
 
     setTimeout(() => {
