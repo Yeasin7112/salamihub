@@ -44,7 +44,9 @@ const Founder = () => {
           </div>
 
           <p className="text-muted-foreground text-sm">
-            আপনার সালামি এই প্রজেক্ট চালিয়ে যেতে সাহায্য করবে। ধন্যবাদ! 🙏
+            This little project was built with Eid spirit and a lot of coffee ☕
+            <br />
+            If you enjoyed it, feel free to send the founder a little Eidi 🎁
           </p>
         </div>
 
