@@ -7,6 +7,9 @@ const navItems = [
   { path: "/create", label: "🎁 ঈদি লিংক" },
   { path: "/spin", label: "🎡 ঈদি চরকা" },
   { path: "/roast", label: "😆 রোস্ট" },
+  { path: "/secret", label: "🤫 সিক্রেট" },
+  { path: "/dp", label: "🖼️ DP" },
+  { path: "/voice", label: "🎤 ভয়েস" },
   { path: "/leaderboard", label: "🏆 লিডারবোর্ড" },
   { path: "/founder", label: "❤️ ফাউন্ডার" },
 ];
@@ -21,7 +24,6 @@ export const Navbar = () => {
         <Link to="/" className="text-xl font-bold text-primary-foreground flex items-center gap-2">
           🌙 EidiLink
         </Link>
-        {/* Desktop */}
         <div className="hidden md:flex gap-1">
           {navItems.map((item) => (
             <Link
@@ -37,12 +39,10 @@ export const Navbar = () => {
             </Link>
           ))}
         </div>
-        {/* Mobile toggle */}
         <button className="md:hidden text-primary-foreground" onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-primary/95 backdrop-blur-sm border-t border-primary-foreground/10 animate-slide-up">
           {navItems.map((item) => (

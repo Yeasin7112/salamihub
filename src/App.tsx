@@ -11,6 +11,11 @@ import SpinWheel from "./pages/SpinWheel";
 import RoastGenerator from "./pages/RoastGenerator";
 import Leaderboard from "./pages/Leaderboard";
 import Founder from "./pages/Founder";
+import SecretMessage from "./pages/SecretMessage";
+import SecretReveal from "./pages/SecretReveal";
+import DPGenerator from "./pages/DPGenerator";
+import VoiceWish from "./pages/VoiceWish";
+import VoiceWishPlay from "./pages/VoiceWishPlay";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +35,11 @@ const App = () => (
           <Route path="/roast" element={<RoastGenerator />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/founder" element={<Founder />} />
+          <Route path="/secret" element={<SecretMessage />} />
+          <Route path="/secret/:id" element={<SecretReveal />} />
+          <Route path="/dp" element={<DPGenerator />} />
+          <Route path="/voice" element={<VoiceWish />} />
+          <Route path="/voice/:id" element={<VoiceWishPlay />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

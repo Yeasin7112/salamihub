@@ -8,7 +8,7 @@ const Leaderboard = () => {
   const [leaders, setLeaders] = useState<EidiProfile[]>([]);
 
   useEffect(() => {
-    setLeaders(getLeaderboard());
+    getLeaderboard().then(setLeaders);
   }, []);
 
   return (
