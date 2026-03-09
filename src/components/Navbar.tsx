@@ -21,8 +21,11 @@ export const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-primary/95 backdrop-blur-sm shadow-lg">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
-        <Link to="/" className="text-xl font-bold text-primary-foreground flex items-center gap-2">
-          🌙 EidiLink
+        <Link to="/" className="flex items-center gap-2 text-primary-foreground">
+          <span className="text-2xl">🌙</span>
+          <span className="text-xl font-extrabold tracking-tight">
+            Eid<span className="text-secondary">Hub</span>
+          </span>
         </Link>
         <div className="hidden md:flex gap-1">
           {navItems.map((item) => (
