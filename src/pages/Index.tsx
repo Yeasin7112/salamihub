@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { EidCountdown } from "@/components/EidCountdown";
 import { FestiveBackground } from "@/components/FestiveBackground";
+import { Footer } from "@/components/Footer";
 
 const features = [
   { emoji: "🎁", title: "ঈদি লিংক তৈরি করুন", desc: "নিজের ঈদি পেজ বানান ও শেয়ার করুন", path: "/create" },
@@ -47,8 +48,9 @@ const Index = () => {
               <h3 className="text-lg font-bold text-foreground mb-1">{f.title}</h3>
               <p className="text-sm text-muted-foreground">{f.desc}</p>
             </Link>
-          ))}
+           ))}
         </div>
+        <Footer />
       </div>
     </div>
   );
