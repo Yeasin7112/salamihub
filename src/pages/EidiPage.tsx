@@ -102,12 +102,12 @@ const EidiPage = () => {
               <p className="text-xl font-bold" style={{ color: "hsl(45, 100%, 96%)" }}>
                 {profile.paymentNumber}
               </p>
-              <p className="text-xs text-gold/60 mt-1">বিকাশ / নগদ</p>
+              <p className="text-xs mt-1" style={{ color: "hsl(45, 80%, 75%)" }}>বিকাশ / নগদ</p>
             </div>
           )}
 
           <div className="space-y-3">
-            <p className="text-sm text-gold/80">শেয়ার করুন 👇</p>
+            <p className="text-sm" style={{ color: "hsl(45, 90%, 80%)" }}>শেয়ার করুন 👇</p>
             <div className="flex justify-center gap-3 flex-wrap">
               <Button variant="gold" size="sm" onClick={() => share("facebook")} className="rounded-full text-primary-foreground">📘 Facebook</Button>
               <Button variant="gold" size="sm" onClick={() => share("whatsapp")} className="rounded-full text-primary-foreground">💬 WhatsApp</Button>
@@ -116,7 +116,7 @@ const EidiPage = () => {
             </div>
           </div>
 
-          <p className="text-xs text-gold/40 mt-8">👁️ {profile.visits + 1} বার দেখা হয়েছে</p>
+          <p className="text-xs mt-8" style={{ color: "hsl(45, 80%, 70%)" }}>👁️ {profile.visits + 1} বার দেখা হয়েছে</p>
         </div>
       </div>
     </div>
