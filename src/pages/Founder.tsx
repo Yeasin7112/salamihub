@@ -1,4 +1,5 @@
 import { FestiveBackground } from "@/components/FestiveBackground";
+import founderPhoto from "@/assets/founder.jpeg";
 
 const Founder = () => {
   return (
