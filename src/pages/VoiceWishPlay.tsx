@@ -62,11 +62,11 @@ const VoiceWishPlay = () => {
           </div>
 
           <div className="flex justify-center gap-3">
-            <Button variant="gold" size="sm" className="rounded-full" onClick={copyLink}>📋 লিংক কপি</Button>
+            <Button variant="gold" size="sm" className="rounded-full text-primary-foreground" onClick={copyLink}>📋 লিংক কপি</Button>
             <Button
               variant="gold"
               size="sm"
-              className="rounded-full"
+              className="rounded-full text-primary-foreground"
               onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent("তোমার জন্য ভয়েস ঈদ উইশ! 🎤🌙 " + window.location.href)}`, "_blank")}
             >
               💬 WhatsApp

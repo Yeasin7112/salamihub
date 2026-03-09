@@ -92,11 +92,11 @@ const SecretReveal = () => {
             </div>
 
             <div className="flex justify-center gap-3">
-              <Button variant="gold" size="sm" className="rounded-full" onClick={copyLink}>📋 লিংক কপি</Button>
+              <Button variant="gold" size="sm" className="rounded-full text-primary-foreground" onClick={copyLink}>📋 লিংক কপি</Button>
               <Button
                 variant="gold"
                 size="sm"
-                className="rounded-full"
+                className="rounded-full text-primary-foreground"
                 onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent("তোমার জন্য একটি গোপন ঈদ মেসেজ! 🤫🌙 " + window.location.href)}`, "_blank")}
               >
                 💬 WhatsApp

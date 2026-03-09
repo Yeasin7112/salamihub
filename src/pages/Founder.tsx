@@ -15,9 +15,7 @@ const Founder = () => {
         </div>
 
         <div className="bg-card rounded-2xl p-8 shadow-festive animate-slide-up">
-          <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center mx-auto mb-4 text-4xl text-primary-foreground border-4 border-secondary shadow-gold">
-            🌙
-          </div>
+          <img src={founderPhoto} alt="Yeasin Arafat" className="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-secondary shadow-gold" />
           <h2 className="text-2xl font-bold text-foreground mb-1">Yeasin Arafat</h2>
           <p className="text-muted-foreground text-sm mb-4">ঈদের আনন্দ সবার মাঝে ছড়িয়ে দিতে চাই</p>
 

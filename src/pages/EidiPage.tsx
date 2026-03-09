@@ -109,10 +109,10 @@ const EidiPage = () => {
           <div className="space-y-3">
             <p className="text-sm text-gold/80">শেয়ার করুন 👇</p>
             <div className="flex justify-center gap-3 flex-wrap">
-              <Button variant="gold" size="sm" onClick={() => share("facebook")} className="rounded-full">📘 Facebook</Button>
-              <Button variant="gold" size="sm" onClick={() => share("whatsapp")} className="rounded-full">💬 WhatsApp</Button>
-              <Button variant="gold" size="sm" onClick={() => share("messenger")} className="rounded-full">📩 Messenger</Button>
-              <Button variant="outline" size="sm" onClick={copyLink} className="rounded-full border-secondary/50" style={{ color: "hsl(45, 100%, 90%)" }}>📋 কপি</Button>
+              <Button variant="gold" size="sm" onClick={() => share("facebook")} className="rounded-full text-primary-foreground">📘 Facebook</Button>
+              <Button variant="gold" size="sm" onClick={() => share("whatsapp")} className="rounded-full text-primary-foreground">💬 WhatsApp</Button>
+              <Button variant="gold" size="sm" onClick={() => share("messenger")} className="rounded-full text-primary-foreground">📩 Messenger</Button>
+              <Button variant="gold" size="sm" onClick={copyLink} className="rounded-full text-primary-foreground">📋 কপি</Button>
             </div>
           </div>
 
