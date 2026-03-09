@@ -48,8 +48,9 @@ const Index = () => {
               <h3 className="text-lg font-bold text-foreground mb-1">{f.title}</h3>
               <p className="text-sm text-muted-foreground">{f.desc}</p>
             </Link>
-          ))}
+           ))}
         </div>
+        <Footer />
       </div>
     </div>
   );
