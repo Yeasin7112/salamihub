@@ -72,7 +72,7 @@ const SecretReveal = () => {
           <div className="animate-bounce-in">
             <div className="text-8xl mb-6 animate-float">🎁</div>
             <h1 className="text-3xl font-bold text-gold mb-4">আপনার জন্য একটি গোপন মেসেজ!</h1>
-            <p className="text-gold/70 mb-8">
+            <p style={{ color: "hsl(45, 80%, 75%)" }} className="mb-8">
               {message.sender_name !== "অজানা" ? `${message.sender_name} থেকে` : "কেউ একজন"} আপনাকে একটি ঈদ মেসেজ পাঠিয়েছে 🌙
             </p>
             <Button variant="festive" size="lg" className="rounded-full text-lg px-10" onClick={handleReveal}>
@@ -87,7 +87,7 @@ const SecretReveal = () => {
             <div className="bg-card/10 backdrop-blur-md rounded-2xl p-8 mb-6 border border-secondary/30">
               <p className="text-xl" style={{ color: "hsl(45, 100%, 90%)" }}>{message.message}</p>
               {message.sender_name !== "অজানা" && (
-                <p className="text-gold/70 mt-4 text-sm">— {message.sender_name}</p>
+                <p style={{ color: "hsl(45, 80%, 75%)" }} className="mt-4 text-sm">— {message.sender_name}</p>
               )}
             </div>
 

@@ -52,7 +52,7 @@ const VoiceWishPlay = () => {
         <div className="animate-bounce-in">
           <div className="text-6xl mb-4 animate-float">🌙</div>
           <h1 className="text-3xl font-bold text-gold mb-2">ঈদ মোবারক!</h1>
-          <p className="text-gold/70 mb-8">
+          <p style={{ color: "hsl(45, 80%, 75%)" }} className="mb-8">
             {wish.sender_name !== "অজানা" ? `${wish.sender_name}` : "কেউ একজন"} আপনাকে ভয়েস ঈদ উইশ পাঠিয়েছে 🎤
           </p>
 
