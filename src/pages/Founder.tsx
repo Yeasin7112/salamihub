@@ -52,12 +52,12 @@ const Founder = () => {
 
         <div className="mt-8 text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
-            <span className="h-px w-8 bg-secondary/40" />
-            <span className="text-secondary text-xs">✦</span>
-            <span className="h-px w-8 bg-secondary/40" />
+            <span className="h-px w-10 bg-primary/30" />
+            <span className="text-secondary text-sm">🌙</span>
+            <span className="h-px w-10 bg-primary/30" />
           </div>
-          <p className="text-sm font-medium italic bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent">
-            Made with Eid spirit, laughter, and a little bit of code ✨
+          <p className="text-base font-semibold text-primary tracking-wide">
+            Made with Eid spirit, laughter & a little bit of code <span className="text-secondary">✨</span>
           </p>
         </div>
       </div>
